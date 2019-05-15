@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			.item {width: 20px; height: 20px;background: red; text-align: center;line-height: 20px;position: absolute;}
+		</style>
+	</head>
+	<body>
+		
+		<script>
+			var cache = document.createDocumentFragment();
+			var divs = [];
+			for(var i = 1; i <= 20; i++) {
+				var div = document.createElement("div");
+				div.className = "item";
+				div.innerHTML = i;
+				cache.appendChild(div);
+				// 把创建的每一个div push到数组里
+				divs.push(div);
+			}
+			document.body.appendChild(cache);
+			console.log(divs);
+			document.onmousemove = fn;
+			
+			function fn(e) {
+				e = e || event;
+				// 鼠标坐标
+				var left = e.clientX, top = e.clientY;
+				// 每一步往前步进(后面元素的坐标变为前面一个元素的坐标)
+				setTimeout(function() {
+					for(var j = divs.length-1; j > 0; j--){
+						var a1=divs[j].style.left;
+						 var a2= divs[j-1].style.left;
+						 var b1 = divs[j].style.top; 
+						  var b2 = divs[j-1].style.top;
+						 setTimeout(function () {
+							 a1 = a2;
+							 b1 = b2;
+						 }, 1000)
+						
+					}
+					
+					// 第0个就是当前鼠标坐标
+					divs[0].style.left = left + "px";
+					divs[0].style.top = top + "px";
+				}, 2000);
+				
+				
+				
+				
+			}
+			
+		</script>
+	</body>
+</html>

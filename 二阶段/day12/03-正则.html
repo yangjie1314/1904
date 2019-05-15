@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			// var reg = new RegExp('a');
+			var str = prompt();
+			
+			// var reg = /a/;
+			// var reg = /12345/;
+			// var reg = /[12345]/;
+			// var reg = /[^123]/;
+			// var reg = /^123/;
+			// var reg = /123$/;
+			// var reg = /^123$/; // 完整匹配
+			// var reg = /\d/;
+			// var reg = /^1.2$/; // 1开头,2结尾,中间可以是任意一个字符
+			// var reg = /\u7f16\u7801/; // 匹配 "编码" 汉字
+			// var reg = /^1.{3}2$/;
+			// var reg = /^1.{3,5}2$/;
+			// var reg = /^1.+2$/;
+			var reg = /a/i;
+			
+			console.log(reg.test(str)); // 满足就返回true
+		</script>
+	</body>
+</html>

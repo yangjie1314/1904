@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="box">box</div>
+		<script>
+			/* function test (a) {
+				console.log(a);
+			} */
+			
+			var test = (a,b) => {
+				console.log(a,b);
+			}
+			// 一个参数,小括号可以省略
+			var test2 = a => {
+				console.log(a);
+			}
+			
+			// 函数体只有一句话,大括号可以省略
+			var test3 = a => console.log(a);
+			
+			// 如果函数只有一句,而且这一句就是返回值的话,return可以省略
+			var test4 = a => a+1;
+			
+			console.log(test4(123));
+			
+			// 不会提升
+			// 没有自己的this
+			// 写法更简洁
+			
+			document.querySelector("#box").onclick =  () => {
+				console.log(this);
+			}
+			
+			var fn = () => ({id:1 , "name":'lisi'}); // return 一个对象,而不是函数体
+			
+			
+			
+			
+			
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			var a = 20;
+			function fn() {
+				var b = 10;
+				console.log(b);
+				function foo () {
+					var c = 30;
+					console.log(c);
+				}
+				foo();
+				// foo函数调用结束以后,c变量也就跟着出栈,就会被内存销毁,变量的生命周期
+			}
+			
+			console.log(a);
+			
+			
+			
+			fn();
+			console.log(123);
+		</script>
+	</body>
+</html>
